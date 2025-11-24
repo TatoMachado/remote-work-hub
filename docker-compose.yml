@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  core-platform:
+    build: ./backend/core-platform
+    container_name: core-platform
+    # ports, env, etc depois
+
+  matching-api:
+    build: ./backend/matching-api
+    container_name: matching-api
+    # ports, env, etc depois
+
+  notifications-api:
+    build: ./backend/notifications-api
+    container_name: notifications-api
+    # ports, env, etc depois

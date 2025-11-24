@@ -1,0 +1,27 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+
+# Docker artifacts
+*.log
+**/tmp
+**/var
+
+# Node
+node_modules/
+dist/
+
+# PHP / Symfony
+vendor/
+
+# Ruby / Rails
+bundle/
+log/
+tmp/
+
+# .NET
+bin/
+obj/
