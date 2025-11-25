@@ -2,3 +2,8 @@ health_check:
   path: /health
   controller: App\Controller\HealthCheckController
   methods: [GET]
+
+notifications_create:
+  path: /notifications
+  controller: App\UI\Http\SendNotificationController
+  methods: [POST]

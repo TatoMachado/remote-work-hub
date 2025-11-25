@@ -23,7 +23,7 @@ RUN composer install --no-interaction --prefer-dist --no-scripts || true
 # Copiar o restante do código
 COPY . .
 
-RUN composer install --no-interaction --prefer-dist
+RUN composer install --no-interaction --prefer-dist --no-scripts
 
 EXPOSE 9000
 
