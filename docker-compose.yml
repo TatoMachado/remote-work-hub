@@ -1,17 +1,19 @@
-version: "3.9"
-
 services:
-  core-platform:
-    build: ./backend/core-platform
-    container_name: core-platform
-    # ports, env, etc depois
-
-  matching-api:
-    build: ./backend/matching-api
-    container_name: matching-api
-    # ports, env, etc depois
-
   notifications-api:
     build: ./backend/notifications-api
     container_name: notifications-api
-    # ports, env, etc depois
+    volumes:
+      - ./backend/notifications-api:/var/www/html
+    expose:
+      - "9000"
+
+  notifications-nginx:
+    image: nginx:alpine
+    container_name: notifications-nginx
+    volumes:
+      - ./backend/notifications-api:/var/www/html
+      - ./infra/nginx/notifications.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8000:80"
+    depends_on:
+      - notifications-api

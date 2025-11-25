@@ -1,0 +1,7 @@
+{
+  "name": "notifications/api",
+  "description": "Notifications API",
+  "require": {
+    "php": "^8.2"
+  }
+}
